@@ -1,0 +1,145 @@
+// Bouton 
+@mixin btn ($line-size : 1px, $line-style: solid, $color: black, $radius: 0, $bck-color: none, $padding: 10px,){
+  border: $line-size $line-style $line-color;
+  border-radius: $radius;
+  background: $bck-color;
+  padding: $padding;
+  text-decoration: none;
+  color: $color;
+}
+
+@mixin burger (
+  $width: 40px,
+  $height: 40px,
+  $line-size : 1px,
+  $line-style: solid,
+  $color: black,
+  $radius: 15px,
+  $height-span: 4%
+  ){
+  width: $width;
+  height: $height;
+  border: $line-size $line-style $color;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: $radius;
+  span {
+      width: 60%;
+      height: $height-span;
+      background: $color;
+      margin: 10% 0;
+      border-radius: $radius;
+  }
+}
+
+
+// font mixin
+@mixin font($fontfamily,$size, $ls, $weight, $lh,$colour:#000) {
+  color: $colour;
+  font-family: $fontfamily;
+  font-size: $size;
+  letter-spacing: $ls; 
+  font-weight: $weight; 
+  line-height: $lh;
+}
+
+// FLEXBOX
+@mixin flex ($display: flex, $direction: row, $justify: center, $align: center) {
+  display: $display;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-center-column {
+  @include flex-center;
+  flex-direction: column;
+}
+
+@mixin flex-center-vert {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-center-horiz {
+  display: flex;
+  justify-content: center;
+}
+
+// background
+@mixin background($size:cover, $pos:center,$attachement:scroll) {
+  background-size: $size;
+  background-position: $pos;
+  background-attachment: $attachement;
+}
+
+
+/* SCSS */
+@mixin vertical-center {
+  position: relative;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@mixin abs-position ($top, $right, $bottom, $left) {
+  position: absolute; 
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+
+//cover video
+@mixin cover-video () {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  left: 0;
+  max-width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
+
+// responsive
+@mixin mobile {
+  @media screen and (min-width: $mobile) {
+      @content;
+  }
+}
+@mixin tablet {
+  @media screen and (min-width: $tablet) {
+      @content;
+  }
+}
+
+@mixin laptop {
+  @media screen and (min-width: $laptop) {
+      @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: $desktop) {
+      @content;
+  }
+}

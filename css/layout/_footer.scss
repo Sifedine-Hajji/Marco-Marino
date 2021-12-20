@@ -1,0 +1,33 @@
+footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 25px;
+    display: block;
+    width: 90%;
+    height: 20px;
+    margin: 0 auto 20px;
+    @media screen and (max-width:990px) {
+        display: none;
+    }
+
+    .social-medias {
+        display: flex;
+        justify-content: space-between;
+        @include font(Circularpro book, 12px, 1px, 400, 20px, white);
+
+        .footer-nav {
+            display: flex;
+            justify-content: space-around;
+
+            a {
+                margin: 0 40px 0 0;
+            }
+        }
+
+        span {
+            color: gray;
+            font-style: italic;
+        }
+    }
+}
